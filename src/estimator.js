@@ -1,7 +1,7 @@
 const covid19ImpactEstimator = (data) => {
   const input = data;
-  const dailyRate1 = input.reportedCases * 10 * 512/28;
-  const dailyRate2 = input.reportedCases * 50 * 512/28;
+  const dailyRate1 =( input.reportedCases * 10 * 512)/28;
+  const dailyRate2 = (input.reportedCases * 50 * 512)/28;
   return {
     input,
     impact: {
