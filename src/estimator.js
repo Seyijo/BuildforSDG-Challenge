@@ -6,9 +6,9 @@ const covid19ImpactEstimator = (data) => {
     impact: {
       currentlyInfected: input.reportedCases * 10,
       infectionsByRequestedTime: input.reportedCases * 10 * 512,
-      periodInDays: "",
-      periodInWeeks: "",
-      periodInMonths: ""
+      periodInDays: 12,
+      periodInWeeks: 2,
+      periodInMonths: 1
     },
     severeImpact: {
       currentlyInfected: input.reportedCases * 50,
