@@ -13,10 +13,10 @@ const covid19ImpactEstimator = (data) => {
           ans =
             2 ** Math.floor(input.timeToElapse / 3) * input.reportedCases * 10;
         } else if (input.periodType === 'weeks') {
-          let days = input.timeToElapse * 7;
+          const days = input.timeToElapse * 7;
           ans = 2 ** Math.floor(days / 3) * input.reportedCases * 10;
         } else {
-          let days = input.timeToElapse * 30;
+          const days = input.timeToElapse * 30;
           ans = 2 ** Math.floor(days / 3) * input.reportedCases * 10;
         }
         return ans;
@@ -31,10 +31,10 @@ const covid19ImpactEstimator = (data) => {
           ans =
             2 ** Math.floor(input.timeToElapse / 3) * input.reportedCases * 50;
         } else if (input.periodType === 'weeks') {
-          let days = input.timeToElapse * 7;
+          const days = input.timeToElapse * 7;
           ans = 2 ** Math.floor(days / 3) * input.reportedCases * 50;
         } else {
-          let days = input.timeToElapse * 30;
+          const days = input.timeToElapse * 30;
           ans = 2 ** Math.floor(days / 3) * input.reportedCases * 50;
         }
         return ans;
