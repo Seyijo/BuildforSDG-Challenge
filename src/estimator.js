@@ -1,7 +1,6 @@
 const covid19ImpactEstimator = (data) => {
   const input = data;
-  const dailyRate1 = Math.floor((input.reportedCases * 10 * 512) / 28);
-  const dailyRate2 = Math.floor((input.reportedCases * 50 * 512) / 28);
+
   return {
     input,
     impact: {
@@ -9,12 +8,16 @@ const covid19ImpactEstimator = (data) => {
       infectionsByRequestedTime: input.reportedCases * 10 * 512,
       estimator() {
         let ans = 0;
+
         if (input.periodType === 'days') {
-          ans = dailyRate1 * input.timeToElapse;
+          ans =
+            2 ** Math.floor(input.timeToElapse / 3) * input.reportedCases * 10;
         } else if (input.periodType === 'weeks') {
-          ans = dailyRate1 * input.timeToElapse * 7;
+          let days = input.timeToElapse * 7;
+          ans = 2 ** Math.floor(days / 3) * input.reportedCases * 10;
         } else {
-          ans = dailyRate1 * input.timeToElapse * 30;
+          let days = input.timeToElapse * 30;
+          ans = 2 ** Math.floor(days / 3) * input.reportedCases * 10;
         }
         return ans;
       }
@@ -25,11 +28,14 @@ const covid19ImpactEstimator = (data) => {
       estimator() {
         let ans = 0;
         if (input.periodType === 'days') {
-          ans = dailyRate2 * input.timeToElapse;
+          ans =
+            2 ** Math.floor(input.timeToElapse / 3) * input.reportedCases * 50;
         } else if (input.periodType === 'weeks') {
-          ans = dailyRate2 * input.timeToElapse * 7;
+          let days = input.timeToElapse * 7;
+          ans = 2 ** Math.floor(days / 3) * input.reportedCases * 50;
         } else {
-          ans = dailyRate2 * input.timeToElapse * 30;
+          let days = input.timeToElapse * 30;
+          ans = 2 ** Math.floor(days / 3) * input.reportedCases * 50;
         }
         return ans;
       }
