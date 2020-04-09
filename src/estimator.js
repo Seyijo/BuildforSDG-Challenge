@@ -20,7 +20,7 @@ const covid19ImpactEstimator = (data) => {
           ans = 2 ** (days / 3) * input.reportedCases * 10;
         }
         return ans;
-      }*/
+      } */
       estimator() {
         let ans;
         if (input.periodType === 'days') {
