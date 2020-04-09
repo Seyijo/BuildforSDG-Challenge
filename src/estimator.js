@@ -15,8 +15,8 @@ const covid19ImpactEstimator = (data) => {
           ans = Math.floor(dailyRate1 * input.timeToElapse * 7);
         } else {
           ans = Math.floor(dailyRate1 * input.timeToElapse * 30);
-          return ans;
         }
+        return ans;
       }
     },
     severeImpact: {
